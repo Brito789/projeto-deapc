@@ -7,5 +7,5 @@ Como objetivos deste trabalho temos como por exemplo:
     -Processamento dos dados de compras;
     -Acompanhamento da encomenda.
 A utilização desta aplicação Web será usada por:
-    -Vendedor,G: gerir a sua lista de produtos; gestão de encomendas e consulta de vendas e relatorios;
-    -Comprador,B: inserir os produtos na lista de desejos, ver a lista de produtos disponiveis na loja e pagamento.
+    -Fornecedor: fornecer produtos, dar a descrição dos produtos individualmente e comunicação com o gestor do inventario
+    -Gestor do inventário: Adicionar, editar e remover produtos do inventário; registra entradas e saídas de stock e monitorizar níveis de stock e receber alertas de baixo inventário
