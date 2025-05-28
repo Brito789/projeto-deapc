@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <title>Login - Gestão de Inventário</title>
+  <link rel="stylesheet" href="../styles/login.css">
+</head>
+<body>
+  <div class="login-container">
+    <form onsubmit="return validarLogin(event)">
+      <h1>Gestão de Inventário</h1>
+      <label>Utilizador: <input type="text" name="user" id="user"></label><br><br>
+      <label>Password: <input type="password" name="pass" id="pass"></label><br><br>
+      <button type="submit">Entrar</button>
+    </form> <!-- Mudar depois para a pagina correta-->
+    <script>  
+      function validarLogin(event) {
+        event.preventDefault();
+
+        const user = document.getElementById('user').value;
+        const pass = document.getElementById('pass').value;
+
+        if (user === "Gestor" && pass === "1234") {
+          window.location.href = "../gestao-inventario/gestor_dashboard.html";
+          
+        }else if (user === "Fornecedor" && pass ==="1234"){
+          window.location.href = "../gestao-inventario/fornecedor_dashboard.html";
+        
+        }else {
+          alert("Credenciais inválidas");
+        }
+    }
+    </script>
+  </div>
+</body>
+</html>
