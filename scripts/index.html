@@ -1,11 +1,24 @@
-<html>
+<!DOCTYPE html>
+<html lang="pt">
 <head>
-<title>O titulo da pagina</title>
+  <meta charset="UTF-8">
+  <title>Login - Gestão de Inventário</title>
+  <<link rel="stylesheet" href="../styles/index.css">
 </head>
 <body>
-<h1>Esta e a minha primeira pagina WWW</h1>
-<P>
-<b>Texto de demonstracao esta carregado </b> 
-<u>e agora sublinhado.
+  <div class="login-container">
+    <form action="gestor_dashboard.html" method="get">
+      <h1>Gestão de Inventário</h1>
+      <label>Utilizador: <input type="text" name="user"></label><br><br>
+      <label>Password: <input type="password" name="pass"></label><br><br>
+      <label>Tipo de Utilizador:
+        <select name="tipo">
+          <option value="gestor">Gestor</option>
+          <option value="fornecedor">Fornecedor</option>
+        </select>
+      </label><br><br>
+      <button type="submit">Entrar</button>
+    </form>
+  </div>
 </body>
-</html> 
+</html>
