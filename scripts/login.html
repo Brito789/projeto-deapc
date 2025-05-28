@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <title>Login - Gestão de Inventário</title>
   <link rel="stylesheet" href="../styles/login.css">
+  <script src="login.js" defer></script> 
 </head>
 <body>
   <div class="login-container">
@@ -12,25 +13,7 @@
       <label>Utilizador: <input type="text" name="user" id="user"></label><br><br>
       <label>Password: <input type="password" name="pass" id="pass"></label><br><br>
       <button type="submit">Entrar</button>
-    </form> <!-- Mudar depois para a pagina correta-->
-    <script>  
-      function validarLogin(event) {
-        event.preventDefault();
-
-        const user = document.getElementById('user').value;
-        const pass = document.getElementById('pass').value;
-
-        if (user === "Gestor" && pass === "1234") {
-          window.location.href = "../gestao-inventario/gestor_dashboard.html";
-          
-        }else if (user === "Fornecedor" && pass ==="1234"){
-          window.location.href = "../gestao-inventario/fornecedor_dashboard.html";
-        
-        }else {
-          alert("Credenciais inválidas");
-        }
-    }
-    </script>
+    </form> 
   </div>
 </body>
 </html>

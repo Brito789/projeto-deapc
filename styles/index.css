@@ -1,0 +1,62 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f5f5f5;
+}
+
+header {
+  background-color: #ae00ff;
+  color: white;
+  padding: 10px 20px;
+  position: relative;
+}
+
+header h1 {
+  margin: 0;
+}
+
+.top-bar {
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.search-box {
+  padding: 8px;
+  width: 60%;
+  border-radius: 5px;
+  border: none;
+}
+
+.icons img {
+  width: 30px;
+  height: 30px;
+  margin-left: 15px;
+  cursor: pointer;
+}
+
+main {
+  padding: 20px;
+}
+
+.produtos {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.produto {
+  background-color: white;
+  padding: 10px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  width: 150px;
+  text-align: center;
+}
+
+.produto img {
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+}
