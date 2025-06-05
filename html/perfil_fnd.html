@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <title>Perfil do Fornecedor</title>
+    <link rel="stylesheet" href="../styles/perfil_fnd.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Bem-vindo, Fornecedor</h1>
+
+        <!-- Adicionar Produto -->
+        <section>
+            <h2>Adicionar Produto</h2>
+            <form id="produtoForm">
+                <input type="text" name="nome" placeholder="Nome do Produto" required><br>
+                <textarea name="descricao" placeholder="Descrição do Produto" required></textarea><br>
+                <button type="submit">Adicionar</button>
+            </form>
+            <div id="produtoResultado"></div>
+        </section>
+
+        <!-- Produtos Fornecidos -->
+        <section>
+            <h2>Produtos Fornecidos</h2>
+            <button onclick="carregarProdutos()">Atualizar Lista</button>
+            <ul id="listaProdutos"></ul>
+        </section>
+    </div>
+
+    <script src="../scripts/perfil_fnd.js"></script>
+</body>
+</html>

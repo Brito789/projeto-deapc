@@ -1,4 +1,8 @@
 <?php
+echo "<pre>DEBUG: ";
+print_r($_POST);
+echo "</pre>";
+
 // editar_produto.php
 session_start();
 include 'conexao.php';

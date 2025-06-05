@@ -1,4 +1,8 @@
 <?php
+echo "<pre>DEBUG: ";
+print_r($_POST);
+echo "</pre>";
+
 // Exemplo simples de backend para futuras integrações
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   $pesquisa = $_POST['pesquisa'] ?? '';
