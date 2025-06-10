@@ -1,0 +1,126 @@
+/* style.css: Estilos principais para todo o projeto */
+
+/* Definição de variáveis de cor (tons de roxo) */
+:root {
+    --roxo-claro: #a259e6;
+    --roxo-medio: #7c33c4;
+    --roxo-escuro: #4f2170;
+    --cinza: #f3f3f6;
+    --branco: #fff;
+    --preto: #222;
+}
+
+/* Reset básico e fonte */
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: var(--cinza);
+    color: var(--preto);
+}
+
+/* Container central */
+.container {
+    background: var(--branco);
+    margin: 32px auto;
+    padding: 32px 24px;
+    border-radius: 14px;
+    box-shadow: 0 6px 24px #7c33c430;
+    max-width: 540px;
+}
+
+/* Títulos */
+h1, h2 {
+    color: var(--roxo-medio);
+    margin-top: 0;
+}
+
+/* Formulários */
+form label {
+    display: block;
+    margin: 14px 0 6px;
+    color: var(--roxo-escuro);
+    font-weight: 500;
+}
+input[type="text"], textarea {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 12px;
+    border: 1px solid var(--roxo-claro);
+    border-radius: 6px;
+    font-size: 1rem;
+    background: var(--cinza);
+}
+textarea { min-height: 64px; }
+
+/* Botões */
+button, .btn {
+    background: linear-gradient(90deg, var(--roxo-claro), var(--roxo-escuro));
+    color: var(--branco);
+    border: none;
+    border-radius: 6px;
+    padding: 10px 22px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 6px;
+    transition: box-shadow 0.2s;
+    box-shadow: 0 2px 8px #a259e626;
+    text-decoration: none;
+    display: inline-block;
+}
+button:hover, .btn:hover {
+    box-shadow: 0 6px 18px #4f217055;
+}
+
+/* Listagem de produtos */
+ul.lista-produtos {
+    padding: 0;
+    list-style: none;
+}
+ul.lista-produtos li {
+    background: #fff;
+    margin-bottom: 10px;
+    border-left: 5px solid var(--roxo-claro);
+    border-radius: 6px;
+    padding: 14px 14px 10px 18px;
+    box-shadow: 0 1px 5px #7c33c418;
+    transition: border-color 0.2s;
+}
+ul.lista-produtos li.aprovado { border-left-color: #35d78a; }
+ul.lista-produtos li.rejeitado { border-left-color: #e24b6a; }
+ul.lista-produtos li.pendente { border-left-color: var(--roxo-claro); }
+
+.status {
+    font-size: 0.9em;
+    padding: 3px 10px;
+    border-radius: 12px;
+    margin-left: 10px;
+    background: var(--roxo-medio);
+    color: var(--branco);
+}
+
+.status.aprovado { background: #35d78a; }
+.status.rejeitado { background: #e24b6a; }
+.status.pendente { background: var(--roxo-medio); }
+
+/* Links de navegação */
+nav {
+    text-align: right;
+    margin-bottom: 18px;
+}
+nav a {
+    margin-left: 16px;
+    color: var(--roxo-medio);
+    font-weight: 500;
+    text-decoration: none;
+}
+nav a:hover { text-decoration: underline; }
+
+.resposta {
+    background: #e6d4f8;
+    color: var(--roxo-escuro);
+    border-left: 4px solid var(--roxo-medio);
+    padding: 12px;
+    border-radius: 6px;
+    margin-bottom: 18px;
+}
