@@ -1,9 +1,9 @@
 function irParaConta() {
-  window.location.href = "listar_produtos.php";
+  window.location.href = "scripts/listar_produtos.php";
 }
 
 function irParaConversas() {
-  window.location.href = "perfil.html";
+  window.location.href = "conversas.html";
 }
 
 function irParaDefinicoes() {
