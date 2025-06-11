@@ -15,7 +15,7 @@ $result = $stmt->execute()->fetchArray(SQLITE3_ASSOC);
 <head>
     <meta charset="UTF-8">
     <title>Detalhes do Produto</title>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="../styles/style.css">
 </head>
 <body>
     <div class="container">

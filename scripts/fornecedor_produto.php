@@ -6,8 +6,8 @@
 <head>
     <meta charset="UTF-8">
     <title>Fornecer Produto</title>
-    <link rel="stylesheet" href="css/style.css">
-    <script src="js/scripts.js"></script>
+    <link rel="stylesheet" href="../styles/style.css">
+    <script src="scripts.js"></script>
 </head>
 <body>
     <div class="container">

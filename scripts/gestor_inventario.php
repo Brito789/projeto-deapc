@@ -8,7 +8,7 @@ $result = $db->query("SELECT * FROM produtos WHERE estado='pendente' ORDER BY da
 <head>
     <meta charset="UTF-8">
     <title>Gestão de Inventário</title>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="../styles/style.css">
 </head>
 <body>
     <div class="container">
