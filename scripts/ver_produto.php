@@ -28,7 +28,7 @@ $result = $stmt->execute()->fetchArray(SQLITE3_ASSOC);
             <h2><?= htmlspecialchars($result['nome']) ?></h2>
             <p><b>Descrição:</b><br>
             <?= nl2br(htmlspecialchars($result['descricao'])) ?></p>
-            <p><b>Fornecedor:</b> <?= htmlspecialchars($result['fornecedor']) ?></p>
+            <p><b>Preço:</b> <?= htmlspecialchars($result['preco']) ?></p>
             <p><b>Estado:</b> <span class="status <?= htmlspecialchars($result['estado']) ?>"><?= htmlspecialchars($result['estado']) ?></span></p>
             <p><b>Inserido em:</b> <?= htmlspecialchars($result['data']) ?></p>
         <?php endif; ?>

@@ -1,7 +1,30 @@
 <?php
-// listar_produtos.php: Lista todos os produtos fornecidos
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
 $db = new SQLite3('inventario.db');
-$result = $db->query("SELECT id, nome, fornecedor, estado FROM produtos ORDER BY data DESC");
+
+// Garante que a tabela existe
+$db->exec("CREATE TABLE IF NOT EXISTS produtos (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    nome TEXT NOT NULL,
+    descricao TEXT NOT NULL,
+    preco REAL NOT NULL,
+    estado TEXT NOT NULL DEFAULT 'pendente',
+    data DATETIME DEFAULT CURRENT_TIMESTAMP
+)");
+
+// Adiciona um produto de teste (comenta após o primeiro teste)
+// $db->exec("INSERT INTO produtos (nome, descricao, preco, estado) VALUES ('Produto Teste', 'Descrição teste', 15.99, 'ativo')");
+
+$result = $db->query('SELECT * FROM produtos');
+if (!$result) {
+    die("Erro na query: " . $db->lastErrorMsg());
+}
+/*while ($row = $result->fetchArray(SQLITE3_ASSOC)) {
+    echo '<pre>'; print_r($row); echo '</pre>';
+}*/
 ?>
 <!DOCTYPE html>
 <html lang="pt">
@@ -13,6 +36,7 @@ $result = $db->query("SELECT id, nome, fornecedor, estado FROM produtos ORDER BY
 <body>
     <div class="container">
         <nav>
+            <a href="index.php">Página principal</a>
             <a href="fornecedor_produto.php">Fornecer Produto</a>
             <a href="gestor_inventario.php">Gestão Inventário</a>
         </nav>
@@ -26,7 +50,7 @@ $result = $db->query("SELECT id, nome, fornecedor, estado FROM produtos ORDER BY
                     </span>
                     <br>
                     <span style="font-size:0.98em;color:#7c33c4;">
-                        Fornecedor: <?= htmlspecialchars($row['fornecedor']) ?>
+                        Preço: <?= htmlspecialchars($row['preco']) ?>
                     </span>
                     <br>
                     <a href="ver_produto.php?id=<?= $row['id'] ?>" class="btn" style="margin-top:7px;">Ver detalhes</a>

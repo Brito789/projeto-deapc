@@ -1,5 +1,5 @@
 function irParaConta() {
-  window.location.href = "scripts/listar_produtos.php";
+  window.location.href = "listar_produtos.php";
 }
 
 function irParaConversas() {

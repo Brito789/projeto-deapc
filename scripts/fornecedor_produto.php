@@ -1,5 +1,5 @@
 <?php
-// fornecedor_produto.php: Formulário para o fornecedor fornecer novos produtos
+
 ?>
 <!DOCTYPE html>
 <html lang="pt">
@@ -18,17 +18,17 @@
         </nav>
         <h2>Fornecer Novo Produto</h2>
         <!-- Formulário para inserir novo produto, chama JS de confirmação ao submeter -->
-        <form action="guardar_produto.php" method="post" onsubmit="return confirmaEnvio(this);">
-            <label>Nome do Produto:
-                <input type="text" name="nome" id="nome" required>
-            </label>
-            <label>Descrição:
-                <textarea name="descricao" id="descricao" required></textarea>
-            </label>
-            <label>Fornecedor:
-                <input type="text" name="fornecedor" id="fornecedor" required>
-            </label>
-            <button type="submit">Fornecer</button>
+        <form action="guardar_produto.php" method="post" onsubmit="return validaCampos()">
+            <label for="nome">Nome:</label>
+            <input type="text" id="nome" name="nome" required>
+
+            <label for="descricao">Descrição:</label>
+            <input type="text" id="descricao" name="descricao" required>
+
+            <label for="preco">Preço:</label>
+            <input type="number" id="preco" name="preco" required step="0.01" min="0">
+
+            <button type="submit">Submeter</button>
         </form>
     </div>
 </body>

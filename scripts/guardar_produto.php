@@ -1,41 +1,34 @@
 <?php
-// guardar_produto.php: Processa submissão do formulário e insere produto na BD
+echo '<pre>'; print_r($_POST); echo '</pre>';
+ini_set('display_errors', 1);
+error_reporting(E_ALL);
+
+$db = new SQLite3('inventario.db');
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    // Recebe os dados do formulário
-    $nome = $_POST['nome'];
-    $descricao = $_POST['descricao'];
-    $fornecedor = $_POST['fornecedor'];
+    $nome = $_POST['nome'] ?? '';
+    $descricao = $_POST['descricao'] ?? '';
+    $preco = $_POST['preco'] ?? '';
 
-    // Conecta à BD SQLite
-    $db = new SQLite3('inventario.db');
-
-    // Cria a tabela se não existir
-    $db->exec("CREATE TABLE IF NOT EXISTS produtos (
-        id INTEGER PRIMARY KEY AUTOINCREMENT,
-        nome TEXT NOT NULL,
-        descricao TEXT NOT NULL,
-        fornecedor TEXT NOT NULL,
-        estado TEXT NOT NULL DEFAULT 'pendente',
-        data DATETIME DEFAULT CURRENT_TIMESTAMP
-    )");
-
-    // Prepara o comando para inserir
-    $stmt = $db->prepare("INSERT INTO produtos (nome, descricao, fornecedor) VALUES (?, ?, ?)");
-    $stmt->bindValue(1, $nome, SQLITE3_TEXT);
-    $stmt->bindValue(2, $descricao, SQLITE3_TEXT);
-    $stmt->bindValue(3, $fornecedor, SQLITE3_TEXT);
-
-    // Executa e mostra mensagem
-    if ($stmt->execute()) {
-        $msg = "Produto fornecido com sucesso!";
-    } else {
-        $msg = "Erro ao fornecer produto.";
+    if (empty($nome) || empty($descricao) || empty($preco)) {
+        die('Todos os campos são obrigatórios.');
     }
-    $db->close();
+
+    $stmt = $db->prepare("INSERT INTO produtos (nome, descricao, preco, estado) VALUES (:nome, :descricao, :preco, 'pendente')");
+    $stmt->bindValue(':nome', $nome, SQLITE3_TEXT);
+    $stmt->bindValue(':descricao', $descricao, SQLITE3_TEXT);
+    $stmt->bindValue(':preco', $preco, SQLITE3_FLOAT);
+
+    if ($stmt->execute()) {
+        header("Location: listar_produtos.php?msg=sucesso");
+        exit;
+    } else {
+        die('Erro ao guardar: ' . $db->lastErrorMsg());
+    }
 } else {
-    $msg = "Acesso inválido.";
+    die('Acesso inválido.');
 }
+
 ?>
 <!DOCTYPE html>
 <html lang="pt">
