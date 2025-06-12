@@ -16,29 +16,3 @@ function validaCampos() {
     }
     return true;
 }
-document.addEventListener('DOMContentLoaded', function () {
-    const form = document.querySelector('form');
-    if (form) {
-        form.addEventListener('submit', function (e) {
-            const username = document.querySelector('input[name="username"]');
-            const password = document.querySelector('input[name="password"]');
-            let valid = true;
-            let message = "";
-
-            if (!username || username.value.trim() === "") {
-                valid = false;
-                message += "O nome de utilizador é obrigatório.\n";
-            }
-            if (!password || password.value.trim() === "") {
-                valid = false;
-                message += "A palavra-passe é obrigatória.\n";
-            }
-
-            if (!valid) {
-                e.preventDefault();
-                alert(message);
-            }
-        });
-    }
-});
-
